@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>AYŞEGÜL ❤️</title>
+
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  background:#05010b;
+  color:white;
+  overflow-x:hidden;
+}
+
+/* ARKA PLAN */
+#stars{
+  position:fixed;
+  inset:0;
+  z-index:-2;
+  background:
+    radial-gradient(circle at 20% 20%,#6414a8 0,transparent 25%),
+    radial-gradient(circle at 80% 30%,#d41470 0,transparent 25%),
+    radial-gradient(circle at 50% 90%,#29105e 0,transparent 30%),
+    #05010b;
+}
+
+.star{
+  position:fixed;
+  width:3px;
+  height:3px;
+  background:white;
+  border-radius:50%;
+  animation:twinkle 2s infinite alternate;
+}
+
+@keyframes twinkle{
+  from{opacity:.15;transform:scale(.7)}
+  to{opacity:1;transform:scale(1.5)}
+}
+
+/* GİRİŞ */
+#intro{
+  position:fixed;
+  inset:0;
+  background:#030007;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  z-index:9999;
+  transition:1s;
+}
+
+.loading{
+  color:#ff62c8;
+  font-family:monospace;
+  font-size:16px;
+  margin-bottom:25px;
+}
+
+.loader{
+  width:250px;
+  height:7px;
+  border:1px solid #ff4fc3;
+  border-radius:20px;
+  overflow:hidden;
+}
+
+.loader div{
+  width:0%;
+  height:100%;
+  background:linear-gradient(90deg,#ff1493,#9b00ff);
+  animation:load 3s forwards;
+}
+
+@keyframes load{
+  to{width:100%}
+}
+
+.introText{
+  margin-top:25px;
+  font-size:14px;
+  color:#aaa;
+}
+
+/* ANA */
+main{
+  opacity:0;
+  transition:2s;
+}
+
+.hero{
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:30px;
+  position:relative;
+}
+
+.heroBox{
+  max-width:900px;
+}
+
+.small{
+  color:#ff76d3;
+  letter-spacing:5px;
+  font-size:14px;
+  margin-bottom:20px;
+  animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+  50%{opacity:.4}
+}
+
+h1{
+  font-size:clamp(65px,15vw,180px);
+  font-weight:900;
+  letter-spacing:8px;
+  background:linear-gradient(
+    90deg,
+    #ff4db8,
+    #fff,
+    #b55cff,
+    #ff4db8
+  );
+  background-size:300%;
+  -webkit-background-clip:text;
+  color:transparent;
+  animation:gradient 5s linear infinite;
+  text-shadow:0 0 50px #ff1aa8;
+}
+
+@keyframes gradient{
+  to{background-position:300%}
+}
+
+.subtitle{
+  margin-top:20px;
+  font-size:20px;
+  color:#ddd;
+}
+
+.scroll{
+  margin-top:60px;
+  color:#aaa;
+  animation:bounce 1.5s infinite;
+}
+
+@keyframes bounce{
+  50%{transform:translateY(10px)}
+}
+
+/* BÖLÜMLER */
+section{
+  padding:90px 20px;
+  max-width:1100px;
+  margin:auto;
+}
+
+.sectionTitle{
+  text-align:center;
+  font-size:40px;
+  margin-bottom:50px;
+}
+
+.sectionTitle span{
+  color:#ff55c8;
+}
+
+/* FOTOĞRAFLAR */
+.photos{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:25px;
+}
+
+.photo{
+  height:300px;
+  border-radius:25px;
+  overflow:hidden;
+  position:relative;
+  border:1px solid #ffffff20;
+  box-shadow:0 0 30px #d9007a30;
+  transition:.5s;
+  background:linear-gradient(135deg,#251033,#64114e);
+}
+
+.photo:hover{
+  transform:translateY(-10px) rotate(1deg);
+  box-shadow:0 0 40px #ff24ad70;
+}
+
+.photo img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.photoText{
+  position:absolute;
+  bottom:0;
+  left:0;
+  right:0;
+  padding:20px;
+  background:linear-gradient(transparent,#000);
+  font-weight:bold;
+}
+
+/* MESAJ */
+.message{
+  background:#ffffff08;
+  border:1px solid #ffffff15;
+  padding:40px;
+  border-radius:30px;
+  text-align:center;
+  backdrop-filter:blur(10px);
+  box-shadow:0 0 50px #ff149330;
+}
+
+.message p{
+  font-size:20px;
+  line-height:1.8;
+  color:#eee;
+}
+
+.heart{
+  font-size:70px;
+  margin-bottom:20px;
+  animation:heart 1s infinite;
+}
+
+@keyframes heart{
+  50%{transform:scale(1.2)}
+}
+
+/* SÜRPRİZ */
+.giftArea{
+  text-align:center;
+}
+
+.gift{
+  font-size:130px;
+  cursor:pointer;
+  display:inline-block;
+  transition:.4s;
+  filter:drop-shadow(0 0 25px #ff24b7);
+}
+
+.gift:hover{
+  transform:scale(1.15) rotate(-5deg);
+}
+
+.giftHint{
+  color:#bbb;
+  margin-top:20px;
+}
+
+.surprise{
+  display:none;
+  margin-top:40px;
+  padding:40px 25px;
+  border-radius:30px;
+  background:linear-gradient(135deg,#6b0750,#280b57);
+  border:1px solid #ff58cb;
+  animation:appear 1s;
+}
+
+@keyframes appear{
+  from{opacity:0;transform:scale(.7)}
+  to{opacity:1;transform:scale(1)}
+}
+
+.surprise h2{
+  font-size:38px;
+  color:#ff8bda;
+  margin-bottom:20px;
+}
+
+.surprise p{
+  font-size:20px;
+  line-height:1.7;
+}
+
+/* FİNAL */
+.final{
+  min-height:70vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+}
+
+.final h2{
+  font-size:clamp(40px,9vw,90px);
+  background:linear-gradient(90deg,#ff48ba,#fff,#b65cff);
+  -webkit-background-clip:text;
+  color:transparent;
+}
+
+.final p{
+  margin-top:25px;
+  color:#aaa;
+  font-size:18px;
+}
+
+/* MÜZİK */
+.music{
+  position:fixed;
+  right:20px;
+  bottom:20px;
+  z-index:100;
+  width:55px;
+  height:55px;
+  border-radius:50%;
+  border:none;
+  background:#ff249f;
+  color:white;
+  font-size:23px;
+  cursor:pointer;
+  box-shadow:0 0 25px #ff249f;
+}
+
+/* KONFETİ */
+.confetti{
+  position:fixed;
+  width:8px;
+  height:14px;
+  top:-20px;
+  z-index:9998;
+  animation:fall linear forwards;
+}
+
+@keyframes fall{
+  to{
+    transform:translateY(110vh) rotate(720deg);
+    opacity:0;
+  }
+}
+
+/* MOBİL */
+@media(max-width:600px){
+  h1{
+    letter-spacing:3px;
+  }
+
+  .sectionTitle{
+    font-size:32px;
+  }
+
+  .message{
+    padding:25px 18px;
+  }
+
+  .message p,
+  .surprise p{
+    font-size:17px;
+  }
+
+  .photo{
+    height:350px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div id="stars"></div>
+
+<!-- GİRİŞ -->
+<div id="intro">
+  <div class="loading" id="loadingText">
+    AYŞEGÜL SİSTEMİ BAŞLATILIYOR...
+  </div>
+
+  <div class="loader">
+    <div></div>
+  </div>
+
+  <div class="introText">
+    Özel bir sürpriz hazırlanıyor ❤️
+  </div>
+</div>
+
+<main id="main">
+
+<!-- HERO -->
+<div class="hero">
+  <div class="heroBox">
+
+    <div class="small">
+      SADECE AYŞEGÜL İÇİN
+    </div>
+
+    <h1>AYŞEGÜL</h1>
+
+    <div class="subtitle">
+      Bu sıradan bir internet sitesi değil... ❤️
+    </div>
+
+    <div class="scroll">
+      ↓ Aşağı kaydır ↓
+    </div>
+
+  </div>
+</div>
+
+
+<!-- MESAJ -->
+<section>
+
+  <div class="sectionTitle">
+    Sana <span>birkaç sözüm</span> var...
+  </div>
+
+  <div class="message">
+
+    <div class="heart">❤️</div>
+
+    <p>
+      Hayatta insanın karşısına birçok insan çıkar.
+      Ama kardeş bambaşka bir şeydir.
+      Bazen kavga ederiz, bazen birbirimizi sinir ederiz 😂
+      ama ne olursa olsun sen benim kardeşimsin.
+      <br><br>
+      Bu küçük site de sana olan sevgimin
+      minicik bir hatırası olsun.
+      <br><br>
+      <strong>İyi ki varsın Ayşegül. ❤️</strong>
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- FOTOĞRAFLAR -->
+<section>
+
+  <div class="sectionTitle">
+    <span>AYŞEGÜL</span>'ÜN DÜNYASI 📸
+  </div>
+
+  <div class="photos">
+
+    <div class="photo">
+      <img src="https://images.unsplash.com/photo-1511988617509-a57c8a288659?auto=format&fit=crop&w=800&q=80">
+      <div class="photoText">Güzel anılar ❤️</div>
+    </div>
+
+    <div class="photo">
+      <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=800&q=80">
+      <div class="photoText">Birlikte geçirilen zamanlar ✨</div>
+    </div>
+
+    <div class="photo">
+      <img src="https://images.unsplash.com/photo-1506869640319-fe1a24fd76dc?auto=format&fit=crop&w=800&q=80">
+      <div class="photoText">Gülümsemek için bir sebep 😊</div>
+    </div>
+
+    <div class="photo">
+      <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=800&q=80">
+      <div class="photoText">Unutulmayacak anılar 🌟</div>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- SÜRPRİZ -->
+<section>
+
+  <div class="sectionTitle">
+    Bir de <span>sürpriz</span> var 🎁
+  </div>
+
+  <div class="giftArea">
+
+    <div class="gift" onclick="openGift()">
+      🎁
+    </div>
+
+    <div class="giftHint">
+      Kutunun üzerine dokun 👆
+    </div>
+
+    <div class="surprise" id="surprise">
+
+      <h2>🎉 SÜRPRİZ! 🎉</h2>
+
+      <p>
+        Ayşegül...
+        <br><br>
+        Dünyanın en mükemmel kardeşi olduğun için
+        sana kocaman bir teşekkür bırakıyorum.
+        <br><br>
+        Her zaman yüzün gülsün,
+        hayallerin gerçekleşsin
+        ve hayatın güzelliklerle dolsun.
+        <br><br>
+        <strong>SENİ ÇOK SEVİYORUM ❤️</strong>
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- FİNAL -->
+<div class="final">
+
+  <div>
+
+    <h2>
+      İYİ Kİ BENİM<br>
+      KARDEŞİMSİN ❤️
+    </h2>
+
+    <p>
+      — Sami'den, Ayşegül'e —
+    </p>
+
+  </div>
+
+</div>
+
+</main>
+
+
+<!-- MÜZİK BUTONU -->
+<button class="music" onclick="toggleMusic()" id="musicButton">
+  🎵
+</button>
+
+<audio id="music" loop>
+  <source src="https://cdn.pixabay.com/audio/2022/10/25/audio_9467c5a4a4.mp3" type="audio/mpeg">
+</audio>
+
+
+<script>
+
+/* YILDIZLAR */
+for(let i=0;i<90;i++){
+
+  const star=document.createElement("div");
+
+  star.className="star";
+
+  star.style.left=Math.random()*100+"vw";
+  star.style.top=Math.random()*100+"vh";
+
+  star.style.animationDelay=Math.random()*3+"s";
+
+  document.body.appendChild(star);
+}
+
+
+/* GİRİŞ ANİMASYONU */
+const texts=[
+  "AYŞEGÜL SİSTEMİ BAŞLATILIYOR...",
+  "ANILAR YÜKLENİYOR...",
+  "SEVGİ VERİLERİ YÜKLENİYOR...",
+  "SÜRPRİZ HAZIRLANIYOR...",
+  "TAMAMLANDI ❤️"
+];
+
+let textIndex=0;
+
+const loadingText=document.getElementById("loadingText");
+
+const interval=setInterval(()=>{
+
+  textIndex++;
+
+  if(textIndex<texts.length){
+    loadingText.textContent=texts[textIndex];
+  }
+
+},600);
+
+
+setTimeout(()=>{
+
+  clearInterval(interval);
+
+  document.getElementById("intro").style.opacity="0";
+  document.getElementById("main").style.opacity="1";
+
+  setTimeout(()=>{
+    document.getElementById("intro").style.display="none";
+  },1000);
+
+},3600);
+
+
+/* HEDİYE */
+function openGift(){
+
+  const surprise=document.getElementById("surprise");
+
+  surprise.style.display="block";
+
+  createConfetti();
+
+  setTimeout(()=>{
+    surprise.scrollIntoView({
+      behavior:"smooth",
+      block:"center"
+    });
+  },100);
+
+}
+
+
+/* KONFETİ */
+function createConfetti(){
+
+  for(let i=0;i<100;i++){
+
+    const c=document.createElement("div");
+
+    c.className="confetti";
+
+    c.style.left=Math.random()*100+"vw";
+
+    c.style.animationDuration=
+      (2+Math.random()*3)+"s";
+
+    c.style.transform=
+      "rotate("+Math.random()*360+"deg)";
+
+    const colors=[
+      "#ff3cac",
+      "#784ba0",
+      "#ffffff",
+      "#ffd700",
+      "#00e5ff"
+    ];
+
+    c.style.background=
+      colors[Math.floor(Math.random()*colors.length)];
+
+    document.body.appendChild(c);
+
+    setTimeout(()=>{
+      c.remove();
+    },5000);
+
+  }
+
+}
+
+
+/* MÜZİK */
+let playing=false;
+
+function toggleMusic(){
+
+  const music=document.getElementById("music");
+  const button=document.getElementById("musicButton");
+
+  if(!playing){
+
+    music.play().then(()=>{
+
+      playing=true;
+      button.textContent="⏸️";
+
+    }).catch(()=>{
+
+      alert("Müziği başlatmak için tekrar dokun.");
+
+    });
+
+  }else{
+
+    music.pause();
+
+    playing=false;
+
+    button.textContent="🎵";
+
+  }
+
+}
+
+</script>
+
+</body>
+</html>
